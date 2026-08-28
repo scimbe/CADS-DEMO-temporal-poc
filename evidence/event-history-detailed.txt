@@ -1,0 +1,145 @@
+Progress:
+--------------- [1] WorkflowExecutionStarted ---------------
+attempt: 1
+eventTime: 2026-08-28T18:39:53.566386465Z
+firstExecutionRunId: 01a049ab-d6de-75de-aeef-5bba0cac1348
+firstWorkflowTaskBackoff: 0s
+identity: 1888171@cads-lambda
+input[0]: # Hello from the Temporal PoC
+
+This tiny markdown fixture is rendered to PDF by the `render_markdown_to_pdf`
+Activity, inside a workflow that is deliberately interrupted mid-flight by
+killing its worker process, and that **automatically resumes on a second
+worker** once Temporal's heartbeat timeout fires.
+
+- This list item proves list rendering works.
+- So does this one.
+
+The rendered PDF and the Temporal event history together are the acceptance
+evidence for `scimbe/CADS-agent-marketplace#30`.
+
+originalExecutionRunId: 01a049ab-d6de-75de-aeef-5bba0cac1348
+taskId: 1048587
+taskQueue.kind: TASK_QUEUE_KIND_NORMAL
+taskQueue.name: render-pdf-poc
+workflowId: render-1787942392
+workflowTaskTimeout: 10s
+workflowType.name: RenderPdfWorkflow
+
+--------------- [2] WorkflowTaskScheduled ---------------
+attempt: 1
+eventTime: 2026-08-28T18:39:53.566570846Z
+startToCloseTimeout: 10s
+taskId: 1048588
+taskQueue.kind: TASK_QUEUE_KIND_NORMAL
+taskQueue.name: render-pdf-poc
+
+--------------- [3] WorkflowTaskStarted ---------------
+eventTime: 2026-08-28T18:39:53.593305334Z
+historySizeBytes: 799
+identity: 1887508@cads-lambda
+requestId: 59d2c070-57ec-4e93-a2f7-4a0090ffce47
+scheduledEventId: 2
+taskId: 1048593
+workerVersion.buildId: ca25588c5b81d901a9b3db1f956f8886
+
+--------------- [4] WorkflowTaskCompleted ---------------
+eventTime: 2026-08-28T18:39:53.632386294Z
+identity: 1887508@cads-lambda
+scheduledEventId: 2
+sdkMetadata.coreUsedFlags[0]: 2
+sdkMetadata.coreUsedFlags[1]: 3
+sdkMetadata.coreUsedFlags[2]: 1
+sdkMetadata.sdkName: temporal-python
+sdkMetadata.sdkVersion: 1.32.0
+startedEventId: 3
+taskId: 1048597
+workerVersion.buildId: ca25588c5b81d901a9b3db1f956f8886
+
+--------------- [5] ActivityTaskScheduled ---------------
+activityId: 1
+activityType.name: render_markdown_to_pdf
+eventTime: 2026-08-28T18:39:53.632645958Z
+heartbeatTimeout: 5s
+input[0]: # Hello from the Temporal PoC
+
+This tiny markdown fixture is rendered to PDF by the `render_markdown_to_pdf`
+Activity, inside a workflow that is deliberately interrupted mid-flight by
+killing its worker process, and that **automatically resumes on a second
+worker** once Temporal's heartbeat timeout fires.
+
+- This list item proves list rendering works.
+- So does this one.
+
+The rendered PDF and the Temporal event history together are the acceptance
+evidence for `scimbe/CADS-agent-marketplace#30`.
+
+retryPolicy.backoffCoefficient: 1
+retryPolicy.initialInterval: 1s
+retryPolicy.maximumAttempts: 3
+retryPolicy.maximumInterval: 100s
+scheduleToCloseTimeout: 0s
+scheduleToStartTimeout: 0s
+startToCloseTimeout: 60s
+taskId: 1048598
+taskQueue.kind: TASK_QUEUE_KIND_NORMAL
+taskQueue.name: render-pdf-poc
+useWorkflowBuildId: true
+workflowTaskCompletedEventId: 4
+
+--------------- [6] ActivityTaskStarted ---------------
+attempt: 2
+eventTime: 2026-08-28T18:40:01.989434071Z
+identity: 1890345@cads-lambda
+lastFailure.message: activity Heartbeat timeout
+lastFailure.source: Server
+lastFailure.timeoutFailureInfo.timeoutType: TIMEOUT_TYPE_HEARTBEAT
+requestId: 3b86daae-ab3a-40ce-953e-1ab6dd5a6657
+scheduledEventId: 5
+taskId: 1048609
+workerVersion.buildId: ca25588c5b81d901a9b3db1f956f8886
+
+--------------- [7] ActivityTaskCompleted ---------------
+eventTime: 2026-08-28T18:40:10.034748498Z
+identity: 1890345@cads-lambda
+result[0]: attempt=2 pid=1890345 sha256=ea36f50dd79474ab4c5471253d23c119e5851400e68129f742434b389d9f79cf bytes=2458
+scheduledEventId: 5
+startedEventId: 6
+taskId: 1048610
+
+--------------- [8] WorkflowTaskScheduled ---------------
+attempt: 1
+eventTime: 2026-08-28T18:40:10.034764667Z
+startToCloseTimeout: 10s
+taskId: 1048611
+taskQueue.kind: TASK_QUEUE_KIND_STICKY
+taskQueue.name: 1887508@cads-lambda-e832c28bcc0a4aedadc8f1fd28aa75db
+taskQueue.normalName: render-pdf-poc
+
+--------------- [9] WorkflowTaskStarted ---------------
+eventTime: 2026-08-28T18:40:10.058459864Z
+historySizeBytes: 2177
+identity: 1890345@cads-lambda
+requestId: ac676723-f7fe-4e15-86f9-49b500ba9629
+scheduledEventId: 8
+taskId: 1048615
+workerVersion.buildId: ca25588c5b81d901a9b3db1f956f8886
+
+--------------- [10] WorkflowTaskCompleted ---------------
+eventTime: 2026-08-28T18:40:10.097099154Z
+identity: 1890345@cads-lambda
+scheduledEventId: 8
+startedEventId: 9
+taskId: 1048619
+workerVersion.buildId: ca25588c5b81d901a9b3db1f956f8886
+
+--------------- [11] WorkflowExecutionCompleted ---------------
+eventTime: 2026-08-28T18:40:10.097250522Z
+result[0]: attempt=2 pid=1890345 sha256=ea36f50dd79474ab4c5471253d23c119e5851400e68129f742434b389d9f79cf bytes=2458
+taskId: 1048620
+workflowTaskCompletedEventId: 10
+
+Results:
+  Status          COMPLETED
+  Result          "attempt=2 pid=1890345 sha256=ea36f50dd79474ab4c5471253d23c119e5851400e68129f742434b389d9f79cf bytes=2458"
+  ResultEncoding  json/plain

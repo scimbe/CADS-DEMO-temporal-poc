@@ -1,0 +1,110 @@
+{
+  "executionConfig": {
+    "taskQueue": {
+      "name": "render-pdf-poc",
+      "kind": "TASK_QUEUE_KIND_NORMAL"
+    },
+    "defaultWorkflowTaskTimeout": "10s"
+  },
+  "workflowExecutionInfo": {
+    "execution": {
+      "workflowId": "render-1787942392",
+      "runId": "01a049ab-d6de-75de-aeef-5bba0cac1348"
+    },
+    "type": {
+      "name": "RenderPdfWorkflow"
+    },
+    "startTime": "2026-08-28T18:39:53.566386465Z",
+    "status": "WORKFLOW_EXECUTION_STATUS_RUNNING",
+    "historyLength": "5",
+    "executionTime": "2026-08-28T18:39:53.566386465Z",
+    "memo": {},
+    "searchAttributes": {
+      "indexedFields": {
+        "BuildIds": {
+          "metadata": {
+            "encoding": "anNvbi9wbGFpbg==",
+            "type": "S2V5d29yZExpc3Q="
+          },
+          "data": "WyJ1bnZlcnNpb25lZCIsInVudmVyc2lvbmVkOmNhMjU1ODhjNWI4MWQ5MDFhOWIzZGIxZjk1NmY4ODg2Il0="
+        }
+      }
+    },
+    "autoResetPoints": {
+      "points": [
+        {
+          "buildId": "ca25588c5b81d901a9b3db1f956f8886",
+          "runId": "01a049ab-d6de-75de-aeef-5bba0cac1348",
+          "firstWorkflowTaskCompletedId": "4",
+          "createTime": "2026-08-28T18:39:53.632390551Z",
+          "resettable": true
+        }
+      ]
+    },
+    "taskQueue": "render-pdf-poc",
+    "stateTransitionCount": "7",
+    "historySizeBytes": "1711",
+    "mostRecentWorkerVersionStamp": {
+      "buildId": "ca25588c5b81d901a9b3db1f956f8886"
+    },
+    "rootExecution": {
+      "workflowId": "render-1787942392",
+      "runId": "01a049ab-d6de-75de-aeef-5bba0cac1348"
+    },
+    "firstRunId": "01a049ab-d6de-75de-aeef-5bba0cac1348",
+    "priority": {}
+  },
+  "pendingActivities": [
+    {
+      "activityId": "1",
+      "activityType": {
+        "name": "render_markdown_to_pdf"
+      },
+      "state": "PENDING_ACTIVITY_STATE_SCHEDULED",
+      "heartbeatDetails": [
+        "attempt=1 pid=1887508"
+      ],
+      "lastHeartbeatTime": "2026-08-28T18:39:53.685928493Z",
+      "attempt": 2,
+      "maximumAttempts": 3,
+      "scheduledTime": "2026-08-28T18:40:00.656447114Z",
+      "lastFailure": {
+        "message": "activity Heartbeat timeout",
+        "source": "Server",
+        "timeoutFailureInfo": {
+          "timeoutType": "TIMEOUT_TYPE_HEARTBEAT"
+        }
+      },
+      "lastWorkerIdentity": "1887508@cads-lambda",
+      "currentRetryInterval": "1s",
+      "priority": {},
+      "activityOptions": {
+        "taskQueue": {
+          "name": "render-pdf-poc",
+          "normalName": "render-pdf-poc"
+        },
+        "scheduleToCloseTimeout": "0s",
+        "scheduleToStartTimeout": "0s",
+        "startToCloseTimeout": "60s",
+        "heartbeatTimeout": "5s",
+        "retryPolicy": {
+          "initialInterval": "1s",
+          "backoffCoefficient": 1,
+          "maximumInterval": "100s",
+          "maximumAttempts": 3
+        },
+        "priority": {}
+      }
+    }
+  ],
+  "workflowExtendedInfo": {
+    "runExpirationTime": "0001-01-01T00:00:00Z",
+    "originalStartTime": "2026-08-28T18:39:53.566386465Z",
+    "requestIdInfos": {
+      "2562a97b-a540-4592-a474-4de3cce9f2c1": {
+        "eventType": "EVENT_TYPE_WORKFLOW_EXECUTION_STARTED",
+        "eventId": "1"
+      }
+    }
+  }
+}
