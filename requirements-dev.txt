@@ -1,0 +1,4 @@
+# Extra dependencies for running the test suite (tests/), on top of
+# poc/requirements.txt. Not needed to run the demo itself.
+pytest==9.1.1
+pytest-asyncio==1.4.0
