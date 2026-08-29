@@ -57,7 +57,7 @@ workflow interpreter — those are designed in the architecture doc and explicit
 - The PoC's `RenderPdfWorkflow` is a normal hand-written Temporal workflow, **not** an instance of the
   generic `TemplateWorkflow` form-driven interpreter the architecture doc argues for (§6) — the PoC
   proves the retry/recovery mechanism; the interpreter itself is future work.
-- This build round's shared litellm-proxy key (`/home/becke/dev-workspace-scratch/demo-portfolio-llm.env`)
+- This build round's shared litellm-proxy key (`$HOME/dev-workspace-scratch/demo-portfolio-llm.env`)
   was **not used** by this PoC — nothing in the reference workflow calls an LLM (the failure/recovery
   demo doesn't need one, and the brief's LLM-generated-Activity-code path (§7 of the architecture doc)
   is explicitly designed-not-built in this issue). Noting this plainly rather than pretending an LLM
