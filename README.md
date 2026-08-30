@@ -26,7 +26,7 @@ This repo does **not** stand up `temporal.bunsenbrenner.org`, the marketplace ma
 workflow interpreter — those are designed in the architecture doc and explicitly left as future work
 (see the doc's closing section). What's built and proven here is the reliability mechanism itself.
 
-## What's real vs. known limitations
+## What's real vs. what's a known limitation
 
 **Real, run and verified in this repo:**
 - A real local Temporal dev server (Temporal Server + sqlite persistence, `temporal server start-dev`
@@ -57,7 +57,7 @@ workflow interpreter — those are designed in the architecture doc and explicit
 - The PoC's `RenderPdfWorkflow` is a normal hand-written Temporal workflow, **not** an instance of the
   generic `TemplateWorkflow` form-driven interpreter the architecture doc argues for (§6) — the PoC
   proves the retry/recovery mechanism; the interpreter itself is future work.
-- This build round's shared litellm-proxy key (`/home/becke/dev-workspace-scratch/demo-portfolio-llm.env`)
+- This build round's shared litellm-proxy key (`$HOME/dev-workspace-scratch/demo-portfolio-llm.env`)
   was **not used** by this PoC — nothing in the reference workflow calls an LLM (the failure/recovery
   demo doesn't need one, and the brief's LLM-generated-Activity-code path (§7 of the architecture doc)
   is explicitly designed-not-built in this issue). Noting this plainly rather than pretending an LLM
@@ -212,6 +212,19 @@ three same-pid attempts, all failing, confirmed live in this repo before the fix
 twice, both clean passes (see `evidence/` and the output above) — this is exactly the kind of thing
 `docs/ARCHITECTURE.md` §8 means by "measured, not asserted": the bug was only visible because real
 command output was checked, not because the design looked right on paper.
+
+## Part of the bunsenbrenner.org demo portfolio
+
+This PoC is published as a signed manifest on the live registry, alongside the rest of the
+[bunsenbrenner.org](https://bunsenbrenner.org) demo portfolio. Verified present on
+[`registry.bunsenbrenner.org/manifests`](https://registry.bunsenbrenner.org/manifests) as
+`temporal-poc` v0.1.1, carrying a manifest `signature` and `publisher_pubkey` (checked at
+activation time). Its guardrail verdict is `binary-kind`: no static compose-YAML scan applies to
+this installer kind, so trust rests on the publisher-pubkey allowlist rather than a bundle scan.
+
+Note that `temporal.bunsenbrenner.org` itself is **designed, not deployed** (see the limitations
+section above) — as of this writing the host does not resolve. The registry entry is the
+installable manifest, not a running shared server.
 
 ## License / scope note
 
