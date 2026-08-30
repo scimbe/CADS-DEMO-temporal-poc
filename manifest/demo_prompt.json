@@ -1,0 +1,15 @@
+{
+  "system": "Du übersetzt einen Nutzerwunsch in eine JSON-Konfiguration für diese Demo. Ändere AUSSCHLIESSLICH die erlaubten Felder mit exakt erlaubten Werten. Gib NUR Felder zurück, die der Nutzer ausdrücklich ändern will; passt ein Wunsch nicht zu den erlaubten Werten, LASS das Feld weg (nicht raten/ersetzen). Antworte NUR mit striktem JSON.",
+  "parameters": [
+    {
+      "name": "render_hold_seconds",
+      "type": "int",
+      "min": 1,
+      "max": 15
+    }
+  ],
+  "examples": [
+    "langsamer, mehr Haltezeit",
+    "schneller durchlaufen"
+  ]
+}
